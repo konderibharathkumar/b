@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Skills - Data Engineer Portfolio{% endblock %}
+
+{% block content %}
+<h1>Technical Skills</h1>
+<p class="lead">Technologies and tools I work with:</p>
+
+<div class="row">
+    {% for category, skill_list in skills.items() %}
+    <div class="col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">{{ category }}</h5>
+            </div>
+            <div class="card-body">
+                {% for skill in skill_list %}
+                <span class="badge bg-primary me-2 mb-2">{{ skill }}</span>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="mt-5">
+    <h3>Certifications</h3>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h6>AWS Certified Data Engineer</h6>
+                    <p class="text-muted">Amazon Web Services</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h6>Apache Spark Developer</h6>
+                    <p class="text-muted">Databricks</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h6>Google Cloud Professional</h6>
+                    <p class="text-muted">Google Cloud</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

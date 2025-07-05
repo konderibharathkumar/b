@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Data Engineer Portfolio{% endblock %}
+
+{% block content %}
+<h1>Get In Touch</h1>
+<p class="lead">Let's connect and discuss data engineering opportunities!</p>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h5>Contact Information</h5>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p><strong>Email:</strong> your.email@example.com</p>
+                        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                        <p><strong>Location:</strong> Your City, Country</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+                        <p><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+                        <p><strong>Portfolio:</strong> <a href="https://yourportfolio.com" target="_blank">yourportfolio.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-body">
+                <h5>Areas of Interest</h5>
+                <ul>
+                    <li>ETL Pipeline Development</li>
+                    <li>Real-time Data Processing</li>
+                    <li>Data Warehouse Architecture</li>
+                    <li>Cloud Data Solutions</li>
+                    <li>Machine Learning Operations</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5>Quick Message</h5>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

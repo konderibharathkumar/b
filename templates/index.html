@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section text-center py-5 mb-5">
+    <h1 class="display-4">Data Engineer</h1>
+    <p class="lead">Building robust ETL pipelines and data solutions</p>
+    <a href="{{ url_for('projects_page') }}" class="btn btn-primary btn-lg">View My Projects</a>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>About Me</h2>
+        <p>Experienced Data Engineer with expertise in designing and implementing scalable ETL pipelines, 
+        data warehousing solutions, and real-time data processing systems. Passionate about turning 
+        raw data into actionable insights.</p>
+        
+        <h3 class="mt-4">Recent Projects</h3>
+        <div class="row">
+            {% for project in projects %}
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text">{{ project.description }}</p>
+                        <div class="mb-2">
+                            {% for tech in project.technologies %}
+                            <span class="badge bg-secondary me-1">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        <a href="{{ project.github_link }}" class="btn btn-outline-primary btn-sm">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>Quick Stats</h5>
+            </div>
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li><strong>5+</strong> Years Experience</li>
+                    <li><strong>10TB+</strong> Daily Data Processed</li>
+                    <li><strong>50+</strong> ETL Pipelines Built</li>
+                    <li><strong>3</strong> Cloud Platforms</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5>Core Technologies</h5>
+            </div>
+            <div class="card-body">
+                <span class="badge bg-primary me-1 mb-1">Python</span>
+                <span class="badge bg-primary me-1 mb-1">Apache Spark</span>
+                <span class="badge bg-primary me-1 mb-1">Apache Airflow</span>
+                <span class="badge bg-primary me-1 mb-1">AWS</span>
+                <span class="badge bg-primary me-1 mb-1">PostgreSQL</span>
+                <span class="badge bg-primary me-1 mb-1">Docker</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
