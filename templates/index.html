@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="hero-section text-center py-5 mb-5">
+<div class="hero-section text-center py-5 mb-5 position-relative">
+    <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Bharath Kumar" class="profile-image">
     <div class="floating">
         <h1 class="display-4" style="color: #ffffff; text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(102,126,234,0.6); font-weight: 700; background: linear-gradient(45deg, #ffffff, #f0f8ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">BHARATH KUMAR KONDERI</h1>
         <h2 class="mb-3" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Data Engineer</h2>
