@@ -26,8 +26,19 @@ def generate_static_site():
             response = client.get(route)
             
             if response.status_code == 200:
+                html_content = response.get_data(as_text=True)
+                
+                # Fix paths for GitHub Pages
+                html_content = html_content.replace('/static/', './static/')
+                html_content = html_content.replace('href="/', 'href="./')
+                html_content = html_content.replace('href="/projects', 'href="./projects.html')
+                html_content = html_content.replace('href="/experience', 'href="./experience.html')
+                html_content = html_content.replace('href="/skills', 'href="./skills.html')
+                html_content = html_content.replace('href="/contact', 'href="./contact.html')
+                html_content = html_content.replace('href="./"', 'href="./index.html"')
+                
                 with open(f'docs/{filename}', 'w', encoding='utf-8') as f:
-                    f.write(response.get_data(as_text=True))
+                    f.write(html_content)
                 print(f"✅ {filename} generated successfully")
             else:
                 print(f"❌ Error generating {filename}: {response.status_code}")
