@@ -22,6 +22,20 @@
     z-index: 10;
 }
 
+@media (max-width: 768px) {
+    .floating-logo {
+        font-size: 2.5rem;
+        opacity: 0.2;
+    }
+}
+
+@media (max-width: 576px) {
+    .floating-logo {
+        font-size: 2rem;
+        opacity: 0.15;
+    }
+}
+
 
 
 .floating-logo.snowflake { color: #29B5E8; animation: float1 25s infinite linear; }
@@ -83,6 +97,22 @@
     text-align: center;
     box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+    .tool-modal-content {
+        width: 90%;
+        margin: 20% auto;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .tool-modal-content {
+        width: 95%;
+        margin: 25% auto;
+        padding: 1rem;
+    }
 }
 
 .tool-modal-close {
