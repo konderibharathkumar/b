@@ -1,21 +1,39 @@
 {% extends "base.html" %}
 
-{% block title %}Skills - Data Engineer Portfolio{% endblock %}
+{% block title %}Skills - Bharath Kumar Portfolio{% endblock %}
 
 {% block content %}
-<h1>Technical Skills</h1>
-<p class="lead">Technologies and tools I work with:</p>
+<div class="text-center mb-5">
+    <h1 class="text-gradient">Technical Expertise</h1>
+    <p class="lead">Technologies and tools I master in data engineering</p>
+</div>
 
 <div class="row">
+    {% set skill_colors = ['primary', 'success', 'info', 'warning', 'danger', 'secondary'] %}
     {% for category, skill_list in skills.items() %}
-    <div class="col-md-6 mb-4">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="mb-0">{{ category }}</h5>
+    <div class="col-lg-6 mb-4">
+        <div class="card animate-on-scroll">
+            <div class="card-header" style="background: linear-gradient(45deg, #667eea, #764ba2); color: white;">
+                <h5 class="mb-0" style="color: white !important;">{{ category }}</h5>
             </div>
             <div class="card-body">
+                <p class="text-muted small mb-3">
+                    {% if 'Programming' in category %}
+                        <i class="fas fa-code me-1"></i>Programming Languages
+                    {% elif 'Cloud' in category %}
+                        <i class="fas fa-cloud me-1"></i>Cloud Platforms
+                    {% elif 'ETL' in category %}
+                        <i class="fas fa-cogs me-1"></i>Data Processing Tools
+                    {% elif 'Database' in category %}
+                        <i class="fas fa-database me-1"></i>Database Systems
+                    {% elif 'Enterprise' in category %}
+                        <i class="fas fa-building me-1"></i>Enterprise Applications
+                    {% elif 'Development' in category %}
+                        <i class="fas fa-tools me-1"></i>Development & Collaboration
+                    {% endif %}
+                </p>
                 {% for skill in skill_list %}
-                <span class="badge bg-primary me-2 mb-2">{{ skill }}</span>
+                <span class="badge bg-{{ skill_colors[loop.index0 % skill_colors|length] }} me-2 mb-2">{{ skill }}</span>
                 {% endfor %}
             </div>
         </div>
@@ -24,29 +42,38 @@
 </div>
 
 <div class="mt-5">
-    <h3>Certifications</h3>
+    <h3 class="text-gradient text-center mb-4">Planned Professional Certifications</h3>
     <div class="row">
         <div class="col-md-4 mb-3">
-            <div class="card text-center">
+            <div class="card text-center animate-on-scroll floating">
                 <div class="card-body">
-                    <h6>AWS Certified Data Engineer</h6>
-                    <p class="text-muted">Amazon Web Services</p>
+                    <div class="mb-3">
+                        <i class="fas fa-cloud fa-3x text-primary"></i>
+                    </div>
+                    <h6>Snowflake Certification</h6>
+                    <p class="text-muted">Data Engineer Associate (Planned)</p>
                 </div>
             </div>
         </div>
         <div class="col-md-4 mb-3">
-            <div class="card text-center">
+            <div class="card text-center animate-on-scroll floating" style="animation-delay: 0.2s;">
                 <div class="card-body">
-                    <h6>Apache Spark Developer</h6>
-                    <p class="text-muted">Databricks</p>
+                    <div class="mb-3">
+                        <i class="fas fa-database fa-3x text-success"></i>
+                    </div>
+                    <h6>ServiceNow Certification</h6>
+                    <p class="text-muted">System Administrator (Planned)</p>
                 </div>
             </div>
         </div>
         <div class="col-md-4 mb-3">
-            <div class="card text-center">
+            <div class="card text-center animate-on-scroll floating" style="animation-delay: 0.4s;">
                 <div class="card-body">
-                    <h6>Google Cloud Professional</h6>
-                    <p class="text-muted">Google Cloud</p>
+                    <div class="mb-3">
+                        <i class="fas fa-code fa-3x text-info"></i>
+                    </div>
+                    <h6>Python Certification</h6>
+                    <p class="text-muted">Data Engineering (Planned)</p>
                 </div>
             </div>
         </div>

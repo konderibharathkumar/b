@@ -1,63 +1,109 @@
 {% extends "base.html" %}
 
-{% block title %}Contact - Data Engineer Portfolio{% endblock %}
+{% block title %}Contact - Bharath Kumar Portfolio{% endblock %}
 
 {% block content %}
-<h1>Get In Touch</h1>
-<p class="lead">Let's connect and discuss data engineering opportunities!</p>
+<div class="text-center mb-5">
+    <h1 class="text-gradient">Let's Connect</h1>
+    <p class="lead">Ready to discuss data engineering opportunities and innovative solutions!</p>
+</div>
 
 <div class="row">
     <div class="col-md-8">
-        <div class="card">
+        <div class="card animate-on-scroll">
+            <div class="card-header bg-gradient text-white" style="background: linear-gradient(45deg, #667eea, #764ba2);">
+                <h5 class="mb-0 text-white"><i class="fas fa-address-card me-2"></i>Contact Information</h5>
+            </div>
             <div class="card-body">
-                <h5>Contact Information</h5>
                 <div class="row">
                     <div class="col-md-6">
-                        <p><strong>Email:</strong> your.email@example.com</p>
-                        <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-                        <p><strong>Location:</strong> Your City, Country</p>
+                        <div class="mb-3">
+                            <i class="fas fa-envelope text-primary me-2"></i>
+                            <strong>Primary Email:</strong><br>
+                            <a href="mailto:konderibharathkumar@gmail.com">konderibharathkumar@gmail.com</a>
+                        </div>
+                        <div class="mb-3">
+                            <i class="fas fa-envelope text-secondary me-2"></i>
+                            <strong>Secondary Email:</strong><br>
+                            <a href="mailto:bharathkumarkonderi@outlook.com">bharathkumarkonderi@outlook.com</a>
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
-                        <p><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-                        <p><strong>Portfolio:</strong> <a href="https://yourportfolio.com" target="_blank">yourportfolio.com</a></p>
+                        <div class="mb-3">
+                            <i class="fas fa-phone text-success me-2"></i>
+                            <strong>Phone:</strong><br>
+                            <a href="tel:+919700386842">+91 9700386842</a>
+                        </div>
+                        <div class="mb-3">
+                            <i class="fas fa-map-marker-alt text-danger me-2"></i>
+                            <strong>Location:</strong><br>
+                            Bengaluru, Karnataka, India
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row text-center">
+                    <div class="col-md-6">
+                        <a href="https://linkedin.com/in/bharathkumar" target="_blank" class="btn btn-outline-primary btn-sm">
+                            <i class="fab fa-linkedin me-1"></i> LinkedIn
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="/static/Bharath_Kumar_Konderi_CV_2025.pdf" target="_blank" class="btn btn-outline-success btn-sm">
+                            <i class="fas fa-download me-1"></i> Resume
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="card mt-4">
+        <div class="card mt-4 animate-on-scroll">
+            <div class="card-header bg-gradient text-white" style="background: linear-gradient(45deg, #23a6d5, #23d5ab);">
+                <h5 class="mb-0 text-white"><i class="fas fa-lightbulb me-2"></i>Areas of Expertise</h5>
+            </div>
             <div class="card-body">
-                <h5>Areas of Interest</h5>
-                <ul>
-                    <li>ETL Pipeline Development</li>
-                    <li>Real-time Data Processing</li>
-                    <li>Data Warehouse Architecture</li>
-                    <li>Cloud Data Solutions</li>
-                    <li>Machine Learning Operations</li>
-                </ul>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle text-success me-2"></i>ETL Pipeline Development</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Cloud Data Architecture</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Snowflake Implementation</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check-circle text-success me-2"></i>ServiceNow Integration</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Data Quality Management</li>
+                            <li><i class="fas fa-check-circle text-success me-2"></i>Performance Optimization</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     
     <div class="col-md-4">
-        <div class="card">
+        <div class="card animate-on-scroll floating">
+            <div class="card-header bg-gradient text-white" style="background: linear-gradient(45deg, #e73c7e, #ee7752);">
+                <h5 class="mb-0 text-white"><i class="fas fa-paper-plane me-2"></i>Quick Message</h5>
+            </div>
             <div class="card-body">
-                <h5>Quick Message</h5>
                 <form>
                     <div class="mb-3">
-                        <label for="name" class="form-label">Name</label>
+                        <label for="name" class="form-label"><i class="fas fa-user me-1"></i>Name</label>
                         <input type="text" class="form-control" id="name" required>
                     </div>
                     <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
+                        <label for="email" class="form-label"><i class="fas fa-envelope me-1"></i>Email</label>
                         <input type="email" class="form-control" id="email" required>
                     </div>
                     <div class="mb-3">
-                        <label for="message" class="form-label">Message</label>
+                        <label for="message" class="form-label"><i class="fas fa-comment me-1"></i>Message</label>
                         <textarea class="form-control" id="message" rows="4" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" class="btn btn-primary w-100">
+                        <i class="fas fa-send me-1"></i>Send Message
+                    </button>
                 </form>
             </div>
         </div>

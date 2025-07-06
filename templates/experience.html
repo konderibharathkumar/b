@@ -1,50 +1,108 @@
 {% extends "base.html" %}
 
-{% block title %}Experience - Data Engineer Portfolio{% endblock %}
+{% block title %}Experience - Bharath Kumar Portfolio{% endblock %}
 
 {% block content %}
-<h1>Professional Experience</h1>
-<p class="lead">My journey as a Data Engineer:</p>
+<div class="text-center mb-5">
+    <h1 class="text-gradient">Professional Journey</h1>
+    <p class="lead">Building data solutions that drive business transformation</p>
+</div>
 
-{% for job in experience %}
-<div class="card mb-4">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-8">
-                <h4 class="card-title">{{ job.role }}</h4>
-                <h6 class="card-subtitle mb-2 text-muted">{{ job.company }}</h6>
-            </div>
-            <div class="col-md-4 text-md-end">
-                <span class="badge bg-primary">{{ job.duration }}</span>
+<div class="timeline">
+    {% for job in experience %}
+    <div class="card mb-4 animate-on-scroll" style="animation-delay: {{ loop.index0 * 0.3 }}s;">
+        <div class="card-header bg-gradient text-white" style="background: linear-gradient(45deg, #667eea, #764ba2);">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h4 class="mb-1 text-white"><i class="fas fa-briefcase me-2"></i>{{ job.role }}</h4>
+                    <h6 class="mb-0 text-white-50"><i class="fas fa-building me-1"></i>{{ job.company }}</h6>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <span class="badge bg-light text-dark fs-6"><i class="fas fa-calendar me-1"></i>{{ job.duration }}</span>
+                </div>
             </div>
         </div>
-        
-        <h6 class="mt-3">Key Responsibilities:</h6>
-        <ul>
-            {% for responsibility in job.responsibilities %}
-            <li>{{ responsibility }}</li>
-            {% endfor %}
-        </ul>
+        <div class="card-body">
+            <h6 class="text-gradient mb-3"><i class="fas fa-tasks me-1"></i>Key Achievements:</h6>
+            <div class="row">
+                {% for responsibility in job.responsibilities %}
+                <div class="col-md-6 mb-2">
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-check-circle text-success me-2 mt-1"></i>
+                        <span>{{ responsibility }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
+    {% endfor %}
 </div>
-{% endfor %}
 
 <div class="mt-5">
-    <h3>Career Highlights</h3>
-    <div class="row">
-        <div class="col-md-6">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Led team of 5 data engineers</li>
-                <li class="list-group-item">Reduced data processing time by 60%</li>
-                <li class="list-group-item">Implemented 50+ automated pipelines</li>
-            </ul>
+    <div class="card animate-on-scroll">
+        <div class="card-header bg-gradient text-white text-center" style="background: linear-gradient(45deg, #23a6d5, #23d5ab);">
+            <h3 class="mb-0 text-white"><i class="fas fa-trophy me-2"></i>Career Highlights</h3>
         </div>
-        <div class="col-md-6">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Migrated legacy systems to cloud</li>
-                <li class="list-group-item">Established data quality standards</li>
-                <li class="list-group-item">Mentored 10+ junior engineers</li>
-            </ul>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4 text-center mb-3">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                            <h5 class="text-gradient">Team Leadership</h5>
+                            <p>Led team of 5+ data engineers across multiple projects</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center mb-3">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <i class="fas fa-rocket fa-3x text-success mb-3"></i>
+                            <h5 class="text-gradient">Performance Boost</h5>
+                            <p>Achieved 50% reduction in data processing time</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center mb-3">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <i class="fas fa-cogs fa-3x text-info mb-3"></i>
+                            <h5 class="text-gradient">Automation</h5>
+                            <p>Implemented 30+ automated ETL pipelines</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-4 text-center mb-3">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <i class="fas fa-cloud fa-3x text-warning mb-3"></i>
+                            <h5 class="text-gradient">Cloud Migration</h5>
+                            <p>Successfully migrated legacy systems to cloud platforms</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center mb-3">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <i class="fas fa-shield-alt fa-3x text-danger mb-3"></i>
+                            <h5 class="text-gradient">Data Quality</h5>
+                            <p>Established enterprise data quality standards</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center mb-3">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <i class="fas fa-graduation-cap fa-3x text-secondary mb-3"></i>
+                            <h5 class="text-gradient">Mentorship</h5>
+                            <p>Mentored 10+ junior engineers in data engineering</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

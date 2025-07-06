@@ -1,0 +1,99 @@
+.floating-logos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.floating-logo {
+    position: absolute;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+    pointer-events: all;
+    cursor: pointer;
+    font-size: 4rem;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 10;
+}
+
+
+
+.floating-logo.snowflake { color: #29B5E8; animation: float1 25s infinite linear; }
+.floating-logo.python { color: #3776AB; animation: float2 30s infinite linear; }
+.floating-logo.postgresql { color: #336791; animation: float3 22s infinite linear; }
+.floating-logo.oracle { color: #F80000; animation: float4 28s infinite linear; }
+.floating-logo.servicenow { color: #81B441; animation: float5 26s infinite linear; }
+.floating-logo.matillion { color: #FF6900; animation: float6 24s infinite linear; }
+
+@keyframes float1 {
+    0% { transform: translateX(-100px) translateY(100vh) rotate(0deg); }
+    100% { transform: translateX(calc(100vw + 100px)) translateY(-100px) rotate(360deg); }
+}
+
+@keyframes float2 {
+    0% { transform: translateX(100vw) translateY(80vh) rotate(0deg); }
+    100% { transform: translateX(-100px) translateY(10vh) rotate(-360deg); }
+}
+
+@keyframes float3 {
+    0% { transform: translateX(-100px) translateY(60vh) rotate(0deg); }
+    100% { transform: translateX(calc(100vw + 100px)) translateY(30vh) rotate(180deg); }
+}
+
+@keyframes float4 {
+    0% { transform: translateX(70vw) translateY(100vh) rotate(0deg); }
+    100% { transform: translateX(20vw) translateY(-100px) rotate(360deg); }
+}
+
+@keyframes float5 {
+    0% { transform: translateX(100vw) translateY(100vh) rotate(0deg); }
+    100% { transform: translateX(-100px) translateY(20vh) rotate(-180deg); }
+}
+
+@keyframes float6 {
+    0% { transform: translateX(-100px) translateY(90vh) rotate(0deg); }
+    100% { transform: translateX(calc(100vw + 100px)) translateY(10vh) rotate(270deg); }
+}
+
+.tool-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+}
+
+.tool-modal-content {
+    background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+}
+
+.tool-modal-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.tool-modal-close:hover {
+    color: #000;
+}

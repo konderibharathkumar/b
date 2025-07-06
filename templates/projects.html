@@ -1,37 +1,55 @@
 {% extends "base.html" %}
 
-{% block title %}Projects - Data Engineer Portfolio{% endblock %}
+{% block title %}Projects - Bharath Kumar Portfolio{% endblock %}
 
 {% block content %}
-<h1>My Projects</h1>
-<p class="lead">Here are some of the key data engineering projects I've worked on:</p>
+<div class="text-center mb-5">
+    <h1 class="text-gradient">Featured Projects</h1>
+    <p class="lead">Showcasing enterprise-scale data engineering solutions and innovations</p>
+</div>
 
 <div class="row">
+    {% set project_icons = ['fas fa-cloud', 'fas fa-cogs', 'fas fa-link'] %}
     {% for project in projects %}
-    <div class="col-md-6 mb-4">
-        <div class="card h-100">
-            <div class="card-body">
-                <h5 class="card-title">{{ project.title }}</h5>
-                <p class="card-text">{{ project.description }}</p>
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 animate-on-scroll" style="animation-delay: {{ loop.index0 * 0.2 }}s;">
+            <div class="card-header text-center bg-gradient text-white" style="background: linear-gradient(45deg, #667eea, #764ba2);">
+                <i class="{{ project_icons[loop.index0 % project_icons|length] }} fa-2x mb-2"></i>
+                <h5 class="mb-0 text-white">{{ project.title }}</h5>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <p class="card-text flex-grow-1">{{ project.description }}</p>
                 
-                <h6>Technologies Used:</h6>
                 <div class="mb-3">
+                    <h6 class="text-gradient"><i class="fas fa-tools me-1"></i>Technologies:</h6>
+                    {% set tech_colors = ['primary', 'success', 'info', 'warning'] %}
                     {% for tech in project.technologies %}
-                    <span class="badge bg-secondary me-1">{{ tech }}</span>
+                    <span class="badge bg-{{ tech_colors[loop.index0 % tech_colors|length] }} me-1 mb-1">{{ tech }}</span>
                     {% endfor %}
                 </div>
                 
-                <a href="{{ project.github_link }}" class="btn btn-primary" target="_blank">
-                    View on GitHub
-                </a>
+                <div class="mt-auto">
+                    <button class="btn btn-secondary w-100" disabled>
+                        <i class="fas fa-code me-1"></i>Code Available on Request
+                    </button>
+                </div>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
 
-<div class="mt-5">
-    <h3>Want to see more?</h3>
-    <p>Check out my <a href="https://github.com/yourusername" target="_blank">GitHub profile</a> for additional projects and contributions.</p>
+<div class="mt-5 text-center">
+    <div class="card animate-on-scroll">
+        <div class="card-body">
+            <h3 class="text-gradient"><i class="fas fa-rocket me-2"></i>Want to Collaborate?</h3>
+            <p class="lead">Explore more of my work and let's build something amazing together!</p>
+            <div class="mt-4">
+                <a href="{{ url_for('contact') }}" class="btn btn-primary">
+                    <i class="fas fa-envelope me-1"></i>Get In Touch
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
