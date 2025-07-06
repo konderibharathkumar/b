@@ -70,6 +70,45 @@ body {
     animation: fadeInUp 0.8s ease-out;
 }
 
+.card-header.bg-gradient {
+    background: linear-gradient(45deg, #667eea, #764ba2) !important;
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    border: none;
+}
+
+.card-header.bg-gradient h5 {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    font-weight: 600;
+}
+
+.card-header.bg-gradient .text-white {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+/* Specific gradient colors for different sections */
+.card-header.contact-info {
+    background: linear-gradient(45deg, #667eea, #764ba2) !important;
+}
+
+.card-header.expertise {
+    background: linear-gradient(45deg, #23a6d5, #23d5ab) !important;
+}
+
+.card-header.quick-message {
+    background: linear-gradient(45deg, #e73c7e, #ee7752) !important;
+}
+
+.card-header.projects {
+    background: linear-gradient(45deg, #f093fb, #f5576c) !important;
+}
+
+.card-header.experience {
+    background: linear-gradient(45deg, #4facfe, #00f2fe) !important;
+}
+
 .card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
