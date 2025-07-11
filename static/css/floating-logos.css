@@ -15,8 +15,8 @@
     transition: all 0.3s ease;
     pointer-events: all;
     cursor: pointer;
-    font-size: 4rem;
-    animation-duration: 20s;
+    font-size: 3.5rem;
+    animation-duration: 25s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     z-index: 10;
@@ -24,55 +24,80 @@
 
 @media (max-width: 768px) {
     .floating-logo {
-        font-size: 2.5rem;
-        opacity: 0.2;
+        font-size: 2.2rem;
+        opacity: 0.18;
     }
 }
 
 @media (max-width: 576px) {
     .floating-logo {
-        font-size: 2rem;
-        opacity: 0.15;
+        font-size: 1.8rem;
+        opacity: 0.12;
     }
 }
 
 
 
-.floating-logo.snowflake { color: #29B5E8; animation: float1 25s infinite linear; }
-.floating-logo.python { color: #3776AB; animation: float2 30s infinite linear; }
-.floating-logo.postgresql { color: #336791; animation: float3 22s infinite linear; }
-.floating-logo.oracle { color: #F80000; animation: float4 28s infinite linear; }
-.floating-logo.servicenow { color: #81B441; animation: float5 26s infinite linear; }
-.floating-logo.matillion { color: #FF6900; animation: float6 24s infinite linear; }
-
-@keyframes float1 {
-    0% { transform: translateX(-100px) translateY(100vh) rotate(0deg); }
-    100% { transform: translateX(calc(100vw + 100px)) translateY(-100px) rotate(360deg); }
+.floating-logo.snowflake { 
+    color: #00D4FF; 
+    animation: orbit1 20s infinite linear;
+}
+.floating-logo.python { 
+    color: #FFD43B; 
+    animation: orbit2 25s infinite linear;
+}
+.floating-logo.postgresql { 
+    color: #4169E1; 
+    animation: orbit3 18s infinite linear;
+}
+.floating-logo.oracle { 
+    color: #FF4444; 
+    animation: orbit4 22s infinite linear;
+}
+.floating-logo.servicenow { 
+    color: #00FF88; 
+    animation: orbit5 28s infinite linear;
+}
+.floating-logo.matillion { 
+    color: #FF8800; 
+    animation: orbit6 24s infinite linear;
 }
 
-@keyframes float2 {
-    0% { transform: translateX(100vw) translateY(80vh) rotate(0deg); }
-    100% { transform: translateX(-100px) translateY(10vh) rotate(-360deg); }
+.floating-logo:hover {
+    transform: scale(1.2);
+    opacity: 1;
+    animation-play-state: paused;
 }
 
-@keyframes float3 {
-    0% { transform: translateX(-100px) translateY(60vh) rotate(0deg); }
-    100% { transform: translateX(calc(100vw + 100px)) translateY(30vh) rotate(180deg); }
+/* Orbital Motion Animations - Positioned in empty areas */
+@keyframes orbit1 {
+    0% { transform: translate(5vw, 10vh) rotate(0deg) translateX(80px) rotate(0deg); }
+    100% { transform: translate(5vw, 10vh) rotate(360deg) translateX(80px) rotate(-360deg); }
 }
 
-@keyframes float4 {
-    0% { transform: translateX(70vw) translateY(100vh) rotate(0deg); }
-    100% { transform: translateX(20vw) translateY(-100px) rotate(360deg); }
+@keyframes orbit2 {
+    0% { transform: translate(85vw, 15vh) rotate(0deg) translateX(70px) rotate(0deg); }
+    100% { transform: translate(85vw, 15vh) rotate(-360deg) translateX(70px) rotate(360deg); }
 }
 
-@keyframes float5 {
-    0% { transform: translateX(100vw) translateY(100vh) rotate(0deg); }
-    100% { transform: translateX(-100px) translateY(20vh) rotate(-180deg); }
+@keyframes orbit3 {
+    0% { transform: translate(10vw, 85vh) rotate(0deg) translateX(60px) rotate(0deg); }
+    100% { transform: translate(10vw, 85vh) rotate(360deg) translateX(60px) rotate(-360deg); }
 }
 
-@keyframes float6 {
-    0% { transform: translateX(-100px) translateY(90vh) rotate(0deg); }
-    100% { transform: translateX(calc(100vw + 100px)) translateY(10vh) rotate(270deg); }
+@keyframes orbit4 {
+    0% { transform: translate(90vw, 80vh) rotate(0deg) translateX(75px) rotate(0deg); }
+    100% { transform: translate(90vw, 80vh) rotate(-360deg) translateX(75px) rotate(360deg); }
+}
+
+@keyframes orbit5 {
+    0% { transform: translate(2vw, 50vh) rotate(0deg) translateX(50px) rotate(0deg); }
+    100% { transform: translate(2vw, 50vh) rotate(360deg) translateX(50px) rotate(-360deg); }
+}
+
+@keyframes orbit6 {
+    0% { transform: translate(95vw, 45vh) rotate(0deg) translateX(65px) rotate(0deg); }
+    100% { transform: translate(95vw, 45vh) rotate(-360deg) translateX(65px) rotate(360deg); }
 }
 
 .tool-modal {

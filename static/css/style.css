@@ -259,6 +259,30 @@ main {
     z-index: 10;
 }
 
+/* Tablet Portrait */
+@media (max-width: 1024px) {
+    .hero-section {
+        padding: 2.5rem 1.5rem !important;
+    }
+    
+    .profile-image {
+        width: 100px;
+        height: 100px;
+        top: 15px;
+        left: 15px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.2rem !important;
+        margin-top: 80px;
+    }
+    
+    .card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Mobile Landscape */
 @media (max-width: 768px) {
     .hero-section {
         padding: 2rem 1rem !important;
@@ -293,10 +317,6 @@ main {
         margin-bottom: 1rem;
     }
     
-    .floating-logo {
-        font-size: 2.5rem !important;
-    }
-    
     .navbar-brand {
         font-size: 1.2rem;
     }
@@ -304,8 +324,13 @@ main {
     .display-4 {
         font-size: 2rem !important;
     }
+    
+    .container {
+        padding: 0 15px;
+    }
 }
 
+/* Mobile Portrait */
 @media (max-width: 576px) {
     .hero-section {
         padding: 1.5rem 0.5rem !important;
@@ -337,11 +362,60 @@ main {
         padding: 0 10px;
     }
     
-    .floating-logo {
-        font-size: 2rem !important;
-    }
-    
     .card-body {
         padding: 1rem 0.75rem;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 1rem 0.25rem !important;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.3rem !important;
+    }
+    
+    .hero-section h2 {
+        font-size: 1rem !important;
+    }
+    
+    .card {
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* Landscape Orientation */
+@media (orientation: landscape) and (max-height: 600px) {
+    .hero-section {
+        padding: 1rem !important;
+        min-height: auto;
+    }
+    
+    .profile-image {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.4rem !important;
+        margin-top: 40px;
+    }
+    
+    .hero-section h2 {
+        font-size: 1rem !important;
+    }
+    
+    .container {
+        max-width: 100%;
     }
 }

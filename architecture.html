@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Architecture - Bharath Kumar Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/floating-logos.css">
+    
+<link rel="stylesheet" href="./static/css/architecture.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">Bharath Kumar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/architecture">Architecture</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        
+<div class="text-center mb-5">
+    <h1 class="text-gradient">Data Architecture Overview</h1>
+    <p class="lead">Enterprise-scale ETL pipeline architecture with multi-layered data processing</p>
+</div>
+
+<div class="architecture-container">
+    <div class="architecture-grid">
+        
+        <!-- Data Sources -->
+        <div class="layer">
+            <h3 class="layer-title">Data Sources</h3>
+            
+            <div class="node oracle-fusion" data-type="oracle-fusion" id="oracle-fusion">
+                <i class="fas fa-database"></i>
+                <div class="node-label">Oracle Fusion</div>
+                <div class="tooltip">2TB+ Daily</div>
+            </div>
+            
+            <div class="node oracle-ebs" data-type="oracle-ebs" id="oracle-ebs">
+                <i class="fas fa-server"></i>
+                <div class="node-label">Oracle EBS</div>
+                <div class="tooltip">500GB+ Archive</div>
+            </div>
+            
+            <div class="node postgresql" data-type="postgresql" id="postgresql">
+                <i class="fas fa-database"></i>
+                <div class="node-label">PostgreSQL</div>
+                <div class="tooltip">10K+ TPS</div>
+            </div>
+            
+            <div class="node sharepoint" data-type="sharepoint" id="sharepoint">
+                <i class="fab fa-microsoft"></i>
+                <div class="node-label">SharePoint</div>
+                <div class="tooltip">10K+ Files/Month</div>
+            </div>
+            
+            <div class="node sftp" data-type="sftp" id="sftp">
+                <i class="fas fa-folder-open"></i>
+                <div class="node-label">SFTP</div>
+                <div class="tooltip">100+ Files/Day</div>
+            </div>
+        </div>
+        
+        <!-- ETL Processing -->
+        <div class="layer">
+            <h3 class="layer-title">ETL Processing</h3>
+            
+            <div class="node matillion" data-type="matillion" id="matillion">
+                <i class="fas fa-cogs"></i>
+                <div class="node-label">Matillion</div>
+                <div class="tooltip">50+ Jobs</div>
+            </div>
+            
+            <div class="node python" data-type="python" id="python">
+                <i class="fab fa-python"></i>
+                <div class="node-label">Python</div>
+                <div class="tooltip">30+ Scripts</div>
+            </div>
+            
+            <div class="node sql" data-type="sql" id="sql">
+                <i class="fas fa-code"></i>
+                <div class="node-label">SQL</div>
+                <div class="tooltip">Advanced Queries</div>
+            </div>
+        </div>
+        
+        <!-- Snowflake Data Warehouse -->
+        <div class="layer">
+            <h3 class="layer-title">Snowflake Data Warehouse</h3>
+            
+            <div class="node incoming" data-type="incoming" id="incoming">
+                <i class="fas fa-inbox"></i>
+                <div class="node-label">Incoming</div>
+                <div class="tooltip">5TB+ Daily</div>
+            </div>
+            
+            <div class="node silver" data-type="silver" id="silver">
+                <i class="fas fa-layer-group"></i>
+                <div class="node-label">Silver</div>
+                <div class="tooltip">Cleansed</div>
+            </div>
+            
+            <div class="node goldstg" data-type="goldstg" id="goldstg">
+                <i class="fas fa-wrench"></i>
+                <div class="node-label">Gold STG</div>
+                <div class="tooltip">Business Logic</div>
+            </div>
+            
+            <div class="node gold" data-type="gold" id="gold">
+                <i class="fas fa-gem"></i>
+                <div class="node-label">Gold</div>
+                <div class="tooltip">Analytics Ready</div>
+            </div>
+        </div>
+        
+        <!-- Data Consumers -->
+        <div class="layer">
+            <h3 class="layer-title">Data Consumers</h3>
+            
+            <div class="node powerbi" data-type="powerbi" id="powerbi">
+                <i class="fas fa-chart-bar"></i>
+                <div class="node-label">Power BI</div>
+                <div class="tooltip">20+ Dashboards</div>
+            </div>
+            
+            <div class="node datascience" data-type="datascience" id="datascience">
+                <i class="fas fa-brain"></i>
+                <div class="node-label">Data Science</div>
+                <div class="tooltip">500+ Users</div>
+            </div>
+        </div>
+        
+
+        
+    </div>
+</div>
+
+<!-- Custom Info Popup -->
+<div id="infoPopup" class="info-popup" style="display: none;">
+    <div class="popup-header">
+        <h5 id="popupTitle">Component Details</h5>
+        <span class="popup-close">&times;</span>
+    </div>
+    <div class="popup-body" id="popupBody">
+        <!-- Dynamic content will be loaded here -->
+    </div>
+</div>
+
+
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2025 Bharath Kumar Konderi. Built with <i class="fas fa-heart text-danger"></i> using Python Flask.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/animations.js"></script>
+    <script src="/static/js/floating-logos.js"></script>
+    
+<script src="./static/js/architecture.js"></script>
+<style>
+.floating-logos { display: none !important; }
+</style>
+
+</body>
+</html>

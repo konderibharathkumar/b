@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+{% block title %}Data Architecture - Bharath Kumar Portfolio{% endblock %}
+
+{% block content %}
+<div class="text-center mb-5">
+    <h1 class="text-gradient">Data Architecture Overview</h1>
+    <p class="lead">Enterprise-scale ETL pipeline architecture with multi-layered data processing</p>
+</div>
+
+<div class="architecture-container">
+    <div class="architecture-grid">
+        
+        <!-- Data Sources -->
+        <div class="layer">
+            <h3 class="layer-title">Data Sources</h3>
+            
+            <div class="node oracle-fusion" data-type="oracle-fusion" id="oracle-fusion">
+                <i class="fas fa-database"></i>
+                <div class="node-label">Oracle Fusion</div>
+                <div class="tooltip">2TB+ Daily</div>
+            </div>
+            
+            <div class="node oracle-ebs" data-type="oracle-ebs" id="oracle-ebs">
+                <i class="fas fa-server"></i>
+                <div class="node-label">Oracle EBS</div>
+                <div class="tooltip">500GB+ Archive</div>
+            </div>
+            
+            <div class="node postgresql" data-type="postgresql" id="postgresql">
+                <i class="fas fa-database"></i>
+                <div class="node-label">PostgreSQL</div>
+                <div class="tooltip">10K+ TPS</div>
+            </div>
+            
+            <div class="node sharepoint" data-type="sharepoint" id="sharepoint">
+                <i class="fab fa-microsoft"></i>
+                <div class="node-label">SharePoint</div>
+                <div class="tooltip">10K+ Files/Month</div>
+            </div>
+            
+            <div class="node sftp" data-type="sftp" id="sftp">
+                <i class="fas fa-folder-open"></i>
+                <div class="node-label">SFTP</div>
+                <div class="tooltip">100+ Files/Day</div>
+            </div>
+        </div>
+        
+        <!-- ETL Processing -->
+        <div class="layer">
+            <h3 class="layer-title">ETL Processing</h3>
+            
+            <div class="node matillion" data-type="matillion" id="matillion">
+                <i class="fas fa-cogs"></i>
+                <div class="node-label">Matillion</div>
+                <div class="tooltip">50+ Jobs</div>
+            </div>
+            
+            <div class="node python" data-type="python" id="python">
+                <i class="fab fa-python"></i>
+                <div class="node-label">Python</div>
+                <div class="tooltip">30+ Scripts</div>
+            </div>
+            
+            <div class="node sql" data-type="sql" id="sql">
+                <i class="fas fa-code"></i>
+                <div class="node-label">SQL</div>
+                <div class="tooltip">Advanced Queries</div>
+            </div>
+        </div>
+        
+        <!-- Snowflake Data Warehouse -->
+        <div class="layer">
+            <h3 class="layer-title">Snowflake Data Warehouse</h3>
+            
+            <div class="node incoming" data-type="incoming" id="incoming">
+                <i class="fas fa-inbox"></i>
+                <div class="node-label">Incoming</div>
+                <div class="tooltip">5TB+ Daily</div>
+            </div>
+            
+            <div class="node silver" data-type="silver" id="silver">
+                <i class="fas fa-layer-group"></i>
+                <div class="node-label">Silver</div>
+                <div class="tooltip">Cleansed</div>
+            </div>
+            
+            <div class="node goldstg" data-type="goldstg" id="goldstg">
+                <i class="fas fa-wrench"></i>
+                <div class="node-label">Gold STG</div>
+                <div class="tooltip">Business Logic</div>
+            </div>
+            
+            <div class="node gold" data-type="gold" id="gold">
+                <i class="fas fa-gem"></i>
+                <div class="node-label">Gold</div>
+                <div class="tooltip">Analytics Ready</div>
+            </div>
+        </div>
+        
+        <!-- Data Consumers -->
+        <div class="layer">
+            <h3 class="layer-title">Data Consumers</h3>
+            
+            <div class="node powerbi" data-type="powerbi" id="powerbi">
+                <i class="fas fa-chart-bar"></i>
+                <div class="node-label">Power BI</div>
+                <div class="tooltip">20+ Dashboards</div>
+            </div>
+            
+            <div class="node datascience" data-type="datascience" id="datascience">
+                <i class="fas fa-brain"></i>
+                <div class="node-label">Data Science</div>
+                <div class="tooltip">500+ Users</div>
+            </div>
+        </div>
+        
+
+        
+    </div>
+</div>
+
+<!-- Custom Info Popup -->
+<div id="infoPopup" class="info-popup" style="display: none;">
+    <div class="popup-header">
+        <h5 id="popupTitle">Component Details</h5>
+        <span class="popup-close">&times;</span>
+    </div>
+    <div class="popup-body" id="popupBody">
+        <!-- Dynamic content will be loaded here -->
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="./static/css/architecture.css">
+{% endblock %}
+
+{% block extra_js %}
+<script src="./static/js/architecture.js"></script>
+<style>
+.floating-logos { display: none !important; }
+</style>
+{% endblock %}

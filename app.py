@@ -66,6 +66,10 @@ def skills_page():
 def contact():
     return render_template('contact.html')
 
+@app.route('/architecture')
+def architecture():
+    return render_template('architecture.html')
+
 @app.route('/resume')
 def resume():
     resume_path = os.path.join(app.root_path, 'Bharath_Kumar_Konderi_CV_2025.pdf')

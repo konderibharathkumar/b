@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """
-Generate static HTML files from Flask app for GitHub Pages
+Generate static HTML files from Flask app for GitHub Pages deployment
 """
+
 import os
 from app import app
 
-def generate_static_site():
+def generate_static_files():
     """Generate static HTML files from Flask routes"""
     
     # Create output directory
-    os.makedirs('docs', exist_ok=True)
+    output_dir = 'static_site'
+    os.makedirs(output_dir, exist_ok=True)
     
     # Routes to generate
     routes = {
@@ -17,44 +19,36 @@ def generate_static_site():
         '/projects': 'projects.html',
         '/experience': 'experience.html', 
         '/skills': 'skills.html',
-        '/contact': 'contact.html'
+        '/contact': 'contact.html',
+        '/architecture': 'architecture.html'
     }
     
     with app.test_client() as client:
         for route, filename in routes.items():
             print(f"Generating {filename}...")
+            
+            # Get HTML content from Flask route
             response = client.get(route)
             
             if response.status_code == 200:
                 html_content = response.get_data(as_text=True)
                 
-                # Fix paths for GitHub Pages
-                html_content = html_content.replace('/static/', './static/')
-                html_content = html_content.replace('href="/', 'href="./')
-                html_content = html_content.replace('href="/projects', 'href="./projects.html')
-                html_content = html_content.replace('href="/experience', 'href="./experience.html')
-                html_content = html_content.replace('href="/skills', 'href="./skills.html')
-                html_content = html_content.replace('href="/contact', 'href="./contact.html')
-                html_content = html_content.replace('href="./"', 'href="./index.html"')
+                # Fix asset paths for GitHub Pages
+                html_content = html_content.replace('{{ url_for(\'static\', filename=\'', 'static/')
+                html_content = html_content.replace('\') }}', '')
+                html_content = html_content.replace('href="{{ url_for(\'', 'href="')
+                html_content = html_content.replace('\') }}"', '.html"')
                 
-                with open(f'docs/{filename}', 'w', encoding='utf-8') as f:
+                # Write to file
+                with open(os.path.join(output_dir, filename), 'w', encoding='utf-8') as f:
                     f.write(html_content)
-                print(f"✅ {filename} generated successfully")
+                    
+                print(f"✅ Generated {filename}")
             else:
-                print(f"❌ Error generating {filename}: {response.status_code}")
+                print(f"❌ Failed to generate {filename} (Status: {response.status_code})")
     
-    # Copy static files
-    import shutil
-    if os.path.exists('docs/static'):
-        shutil.rmtree('docs/static')
-    shutil.copytree('static', 'docs/static')
-    print("✅ Static files copied")
-    
-    print("\n🎉 Static site generated in 'docs' folder!")
-    print("📁 Files created:")
-    for file in os.listdir('docs'):
-        if file.endswith('.html'):
-            print(f"   - {file}")
+    print(f"\n🎉 Static files generated in '{output_dir}' directory")
+    print("📁 Copy contents to your GitHub repository root")
 
 if __name__ == '__main__':
-    generate_static_site()
+    generate_static_files()
