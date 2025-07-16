@@ -58,7 +58,7 @@ Visit: [https://konderibharathkumar.github.io/b/]
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/data-engineer-portfolio.git
+   git clone https://github.com/konderibharathkumar/b.git
    cd data-engineer-portfolio
    ```
 
@@ -146,7 +146,7 @@ This project is open source and available under the [MIT License](LICENSE).
 **Bharath Kumar Konderi**
 - Email: bharathkumar.konderi@gmail.com
 - LinkedIn: [bharathkumarkonderi](https://linkedin.com/in/bharathkumarkonderi)
-- Location: Dallas, TX
+- Location: Bengaluru, IN
 
 ---
 
