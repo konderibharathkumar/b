@@ -3,7 +3,7 @@
 A modern, responsive portfolio website showcasing data engineering expertise, built with HTML5, CSS3, and JavaScript.
 
 ## 🚀 Live Demo
-Visit: [https://yourusername.github.io/data-engineer-portfolio](https://yourusername.github.io/data-engineer-portfolio)
+Visit: [https://konderibharathkumar.github.io/b/]
 
 ## ✨ Features
 
