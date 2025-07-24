@@ -70,6 +70,25 @@ body {
     animation: fadeInUp 0.8s ease-out;
 }
 
+/* Paper float animation for project cards */
+.project-card {
+    animation: paperFloat 3s ease-in-out infinite;
+    transform-origin: center center;
+}
+
+.project-card:hover {
+    animation-play-state: paused;
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+@keyframes paperFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-5px) rotate(0.5deg); }
+    50% { transform: translateY(0) rotate(-0.5deg); }
+    75% { transform: translateY(-5px) rotate(0.25deg); }
+}
+
 .card-header.bg-gradient {
     background: linear-gradient(45deg, #667eea, #764ba2) !important;
     color: white !important;
@@ -231,12 +250,7 @@ main {
 }
 
 .floating {
-    animation: floating 3s ease-in-out infinite;
-}
-
-@keyframes floating {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    /* Animation removed to eliminate blinking cursor effect */
 }
 
 .text-gradient {
@@ -250,15 +264,84 @@ main {
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    border: 4px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border: 6px solid;
+    border-color: #ee7752;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 20px rgba(238, 119, 82, 0.8);
     object-fit: cover;
     z-index: 10;
+    filter: contrast(1.1) saturate(1.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+.header-profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ee7752;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.header-profile-image:hover {
+    transform: scale(1.1);
+}
+
+@keyframes profile-pulse {
+    0% { transform: scale(1); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 15px rgba(102, 126, 234, 0.7); }
+    100% { transform: scale(1.05); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 25px rgba(102, 126, 234, 0.9); }
+}
+
+.animated-name {
+    color: #ffffff;
+    font-weight: 700;
+    position: relative;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px rgba(102,126,234,0.3), 0 0 20px rgba(102,126,234,0.3); }
+    100% { text-shadow: 0 0 20px rgba(102,126,234,0.7), 0 0 30px rgba(102,126,234,0.7), 0 0 40px rgba(102,126,234,0.7); }
+}
+
+/* Tablet Portrait */
+@media (max-width: 1024px) {
+    .hero-section {
+        padding: 2.5rem 1.5rem !important;
+    }
+    
+    .profile-image {
+        width: 100px;
+        height: 100px;
+        top: 15px;
+        left: 15px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.2rem !important;
+        margin-top: 80px;
+    }
+    
+    .card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Mobile Landscape */
 @media (max-width: 768px) {
     .hero-section {
         padding: 2rem 1rem !important;
@@ -293,10 +376,6 @@ main {
         margin-bottom: 1rem;
     }
     
-    .floating-logo {
-        font-size: 2.5rem !important;
-    }
-    
     .navbar-brand {
         font-size: 1.2rem;
     }
@@ -304,8 +383,13 @@ main {
     .display-4 {
         font-size: 2rem !important;
     }
+    
+    .container {
+        padding: 0 15px;
+    }
 }
 
+/* Mobile Portrait */
 @media (max-width: 576px) {
     .hero-section {
         padding: 1.5rem 0.5rem !important;
@@ -337,11 +421,60 @@ main {
         padding: 0 10px;
     }
     
-    .floating-logo {
-        font-size: 2rem !important;
-    }
-    
     .card-body {
         padding: 1rem 0.75rem;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 1rem 0.25rem !important;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.3rem !important;
+    }
+    
+    .hero-section h2 {
+        font-size: 1rem !important;
+    }
+    
+    .card {
+        margin-bottom: 0.75rem;
+    }
+}
+
+/* Landscape Orientation */
+@media (orientation: landscape) and (max-height: 600px) {
+    .hero-section {
+        padding: 1rem !important;
+        min-height: auto;
+    }
+    
+    .profile-image {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .hero-section h1 {
+        font-size: 1.4rem !important;
+        margin-top: 40px;
+    }
+    
+    .hero-section h2 {
+        font-size: 1rem !important;
+    }
+    
+    .container {
+        max-width: 100%;
     }
 }

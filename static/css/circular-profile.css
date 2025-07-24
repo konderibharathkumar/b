@@ -1,0 +1,75 @@
+.circular-profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 6px solid #ee7752;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 20px rgba(238, 119, 82, 0.8);
+    object-fit: cover;
+    z-index: 10;
+    filter: contrast(1.1) saturate(1.2);
+    position: relative;
+    /* Add a white background to help with detaching from background */
+    background-color: white;
+}
+
+/* Animation for the profile image */
+@keyframes profile-pulse {
+    0% { transform: scale(1); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 15px rgba(102, 126, 234, 0.7); }
+    100% { transform: scale(1.05); box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4), 0 0 25px rgba(102, 126, 234, 0.9); }
+}
+
+.profile-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+    animation: profile-pulse 2s ease-in-out infinite alternate;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1024px) {
+    .circular-profile {
+        width: 120px;
+        height: 120px;
+    }
+    .profile-container {
+        top: 15px;
+        left: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .circular-profile {
+        width: 100px;
+        height: 100px;
+    }
+    .profile-container {
+        top: 10px;
+        left: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .circular-profile {
+        width: 80px;
+        height: 80px;
+    }
+    .profile-container {
+        top: 5px;
+        left: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .circular-profile {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 600px) {
+    .circular-profile {
+        width: 50px;
+        height: 50px;
+    }
+}

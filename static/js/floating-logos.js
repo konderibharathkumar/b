@@ -1,4 +1,77 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Add particle effects around the name
+    function createParticles() {
+        const heroSection = document.querySelector('.hero-section');
+        if (!heroSection) return;
+        
+        const particleContainer = document.createElement('div');
+        particleContainer.className = 'particle-container';
+        heroSection.appendChild(particleContainer);
+        
+        // Create particles
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            
+            // Random position
+            const posX = Math.random() * 100;
+            const posY = Math.random() * 100;
+            
+            // Random size
+            const size = Math.random() * 8 + 2;
+            
+            // Random animation duration
+            const duration = Math.random() * 10 + 5;
+            
+            // Random color
+            const colors = ['#667eea', '#764ba2', '#23a6d5', '#23d5ab', '#ffffff'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            
+            // Apply styles
+            particle.style.cssText = `
+                position: absolute;
+                top: ${posY}%;
+                left: ${posX}%;
+                width: ${size}px;
+                height: ${size}px;
+                background-color: ${color};
+                border-radius: 50%;
+                opacity: ${Math.random() * 0.5 + 0.2};
+                animation: float ${duration}s infinite ease-in-out;
+                animation-delay: ${Math.random() * 5}s;
+                pointer-events: none;
+                z-index: 5;
+            `;
+            
+            particleContainer.appendChild(particle);
+        }
+        
+        // Add CSS for particle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float {
+                0% { transform: translateY(0) translateX(0) rotate(0); opacity: 0.2; }
+                25% { transform: translateY(-20px) translateX(10px) rotate(90deg); opacity: 0.5; }
+                50% { transform: translateY(-40px) translateX(-10px) rotate(180deg); opacity: 0.8; }
+                75% { transform: translateY(-20px) translateX(-20px) rotate(270deg); opacity: 0.5; }
+                100% { transform: translateY(0) translateX(0) rotate(360deg); opacity: 0.2; }
+            }
+            
+            .particle-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                pointer-events: none;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    // Call the function to create particles
+    createParticles();
     const tools = [
         {
             name: 'Snowflake',

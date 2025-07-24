@@ -12,7 +12,7 @@
     {% set project_icons = ['fas fa-cloud', 'fas fa-cogs', 'fas fa-link'] %}
     {% for project in projects %}
     <div class="col-lg-4 col-md-6 mb-4">
-        <div class="card h-100 animate-on-scroll" style="animation-delay: {{ loop.index0 * 0.2 }}s;">
+        <div class="card project-card h-100 animate-on-scroll" style="animation-delay: {{ loop.index0 * 0.2 }}s;">
             <div class="card-header text-center bg-gradient text-white" style="background: linear-gradient(45deg, #667eea, #764ba2);">
                 <i class="{{ project_icons[loop.index0 % project_icons|length] }} fa-2x mb-2"></i>
                 <h5 class="mb-0 text-white">{{ project.title }}</h5>
@@ -28,11 +28,7 @@
                     {% endfor %}
                 </div>
                 
-                <div class="mt-auto">
-                    <button class="btn btn-secondary w-100" disabled>
-                        <i class="fas fa-code me-1"></i>Code Available on Request
-                    </button>
-                </div>
+
             </div>
         </div>
     </div>

@@ -4,7 +4,7 @@
 <div class="hero-section text-center py-5 mb-5 position-relative">
     <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Bharath Kumar" class="profile-image">
     <div class="floating">
-        <h1 class="display-4" style="color: #ffffff; text-shadow: 0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(102,126,234,0.6); font-weight: 700; background: linear-gradient(45deg, #ffffff, #f0f8ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">BHARATH KUMAR KONDERI</h1>
+        <h1 class="display-4" style="color: #ffffff; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.9);">BHARATH KUMAR KONDERI</h1>
         <h2 class="mb-3" style="color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">Data Engineer</h2>
         <p class="lead">Transforming data into insights with cutting-edge ETL pipelines and cloud solutions</p>
         <div class="mt-4">
@@ -24,15 +24,24 @@
         
         <h3 class="mt-4">Recent Projects</h3>
         <div class="row">
+            {% set project_icons = ['fas fa-cloud', 'fas fa-cogs'] %}
+            {% set gradient_colors = [
+                'linear-gradient(45deg, #667eea, #764ba2)',
+                'linear-gradient(45deg, #23a6d5, #23d5ab)'
+            ] %}
             {% for project in projects %}
             <div class="col-lg-6 mb-4">
-                <div class="card h-100">
+                <div class="card project-card h-100">
+                    <div class="card-header text-center bg-gradient text-white" style="background: {{ gradient_colors[loop.index0 % gradient_colors|length] }};">
+                        <i class="{{ project_icons[loop.index0 % project_icons|length] }} fa-2x mb-2"></i>
+                        <h5 class="mb-0 text-white">{{ project.title }}</h5>
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">{{ project.title }}</h5>
                         <p class="card-text">{{ project.description }}</p>
                         <div class="mt-auto">
+                            {% set tech_colors = ['primary', 'success', 'info', 'warning'] %}
                             {% for tech in project.technologies %}
-                            <span class="badge bg-secondary me-1 mb-1">{{ tech }}</span>
+                            <span class="badge bg-{{ tech_colors[loop.index0 % tech_colors|length] }} me-1 mb-1">{{ tech }}</span>
                             {% endfor %}
                         </div>
                     </div>
@@ -43,9 +52,10 @@
     </div>
     
     <div class="col-md-4">
-        <div class="card">
-            <div class="card-header">
-                <h5>Quick Stats</h5>
+        <div class="card project-card">
+            <div class="card-header text-center bg-gradient text-white" style="background: linear-gradient(45deg, #e73c7e, #ee7752);">
+                <i class="fas fa-chart-line fa-2x mb-2"></i>
+                <h5 class="mb-0 text-white">Quick Stats</h5>
             </div>
             <div class="card-body">
                 <ul class="list-unstyled">
@@ -58,9 +68,10 @@
             </div>
         </div>
         
-        <div class="card mt-3">
-            <div class="card-header">
-                <h5>Core Technologies</h5>
+        <div class="card project-card mt-3">
+            <div class="card-header text-center bg-gradient text-white" style="background: linear-gradient(45deg, #4facfe, #00f2fe);">
+                <i class="fas fa-code fa-2x mb-2"></i>
+                <h5 class="mb-0 text-white">Core Technologies</h5>
             </div>
             <div class="card-body">
                 <span class="badge bg-primary me-1 mb-1">Python</span>
