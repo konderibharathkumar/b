@@ -26,7 +26,7 @@ experience = [
     {
         'role': 'Data Engineer',
         'company': 'Capgemini (Client: Vertiv)',
-        'duration': 'July 2021 - Present',
+        'duration': 'July 2021 - July 2025',
         'responsibilities': [
             'Design and implement enterprise ETL pipelines using Matillion and Snowflake for Vertiv',
             'Process 5TB+ daily data with optimized performance achieving 50% query time reduction',
