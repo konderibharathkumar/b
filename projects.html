@@ -9,12 +9,19 @@
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="static/css/floating-logos.css">
     
+    <!-- Favicons: root favicon.ico + relative + PNG fallback (works with file:// and http://) -->
+    <link rel="shortcut icon" href="/favicon.ico?v=8" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?v=8" type="image/x-icon">
+    <link rel="icon" href="favicon.ico?v=8" type="image/x-icon"> <!-- relative for file:// -->
+    <link rel="icon" href="static/images/profile_picture.png?v=8" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="static/images/profile_picture.png?v=8" sizes="180x180">
+    <meta name="theme-color" content="#111827">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a href="index.html" class="me-2">
-                <img src="static/images/profile.jpg" alt="Bharath Kumar" class="header-profile-image">
+                <img src="static/images/profile_picture.jpg" alt="Bharath Kumar" class="header-profile-image">
             </a>
             <a class="navbar-brand" href="index.html">Bharath Kumar</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -172,7 +179,7 @@
             // Load the image
             const img = new Image();
             img.crossOrigin = 'Anonymous';
-            img.src = 'static/images/profile.jpg';
+            img.src = 'static/images/profile_picture.jpg';
             
             img.onload = function() {
                 // Create circular clipping path

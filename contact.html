@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="static/css/floating-logos.css">
     
+    <!-- Favicons: root favicon.ico + relative + PNG fallback (works with file:// and http://) -->
+    <link rel="shortcut icon" href="/favicon.ico?v=8" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico?v=8" type="image/x-icon">
+    <link rel="icon" href="favicon.ico?v=8" type="image/x-icon"> <!-- relative for file:// -->
+    <link rel="icon" href="static/images/profile_picture.png?v=8" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="static/images/profile_picture.png?v=8" sizes="180x180">
+    <meta name="theme-color" content="#111827">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -42,6 +49,7 @@
         </div>
     </nav>
 
+    <!-- BEGIN: playful 3D contact animation -->
     <main class="container mt-4">
         
 <div class="text-center mb-5">
@@ -55,6 +63,7 @@
             <div class="card-header bg-gradient contact-info">
                 <h5 class="mb-0 text-white"><i class="fas fa-address-card me-2"></i>Contact Information</h5>
             </div>
+
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
@@ -164,6 +173,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="static/js/animations.js"></script>
     <script src="static/js/floating-logos.js"></script>
-    
 </body>
 </html>
